@@ -10,3 +10,4 @@ end
 >> freq = hist(x,1:5)/N;
 
 
+% Suppose we want to sample from the density, f(x)=x+/2, 0<x<1.
