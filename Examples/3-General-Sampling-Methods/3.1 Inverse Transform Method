@@ -8,6 +8,13 @@
 x(i) = min(find(rand<cumsum(p))); %draws from p
 end
 >> freq = hist(x,1:5)/N;
-
+>>
 
 % Suppose we want to sample from the density, f(x)=x+/2, 0<x<1.
+
+>> N=1000;
+>> x = zeros(N,1);
+>> for i=1:N
+x(i)=(sqrt(8*rand+1)-1)/2;
+end
+>>
