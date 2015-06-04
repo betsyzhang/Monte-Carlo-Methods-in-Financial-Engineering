@@ -15,4 +15,24 @@ end
 end
 >> 
 
-%虽然目前还是错的><
+% 虽然目前还是错的><
+
+% pdf of Z is f(x)=2/sqrt(2*pi)*e^(-x^2/2)
+% g(x)=e^(-x)
+
+% c=max(f(x)/g(x))=2/sqrt(2*pi)*e^(1/2)
+
+>> N=1000;
+>> x=zeros(N,1);
+>> x1=zeros(N,1);
+>> x2=zeros(N,1);
+>> for i=1:N
+x1(i)=rand; x2(i)=rand;  % g(x) 还没有实现
+if x2(i)*2/sqrt(2*pi)*exp(1/2)<2/sqrt(2*pi)*exp(-x1(i)^2/2)
+x(i)=x1(i);
+else
+i=i-1;
+continue
+end
+end
+>>
