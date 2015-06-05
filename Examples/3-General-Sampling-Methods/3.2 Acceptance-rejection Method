@@ -1,21 +1,21 @@
-% Suppose we want to sample from the density, f(x)=x+/2, 0<x<1.
+% Suppose we want to sample from the density, f(x)=x+1/2, 0<x<1.
 
 >> N=1000;
 >> x=zeros(N,1);
 >> x1=zeros(N,1);
 >> x2=zeros(N,1);
->> for i=1:N
+>> i=1;
+>> while i<=N
 x1(i)=rand; x2(i)=rand;
 if x2(i)*3/2<x1(i)+1/2
 x(i)=x1(i);
+i=i+1;
 else
-i=i-1;
 continue
 end
 end
 >> 
 
-% 虽然目前还是错的><
 
 % pdf of Z is f(x)=2/sqrt(2*pi)*e^(-x^2/2)
 % g(x)=e^(-x)
@@ -26,12 +26,13 @@ end
 >> x=zeros(N,1);
 >> x1=zeros(N,1);
 >> x2=zeros(N,1);
->> for i=1:N
-x1(i)=rand; x2(i)=rand;  % g(x) 还没有实现
+>> i=1;
+>> while i=1:N
+x1(i)=rand; x2(i)=exprnd(1);
 if x2(i)*2/sqrt(2*pi)*exp(1/2)<2/sqrt(2*pi)*exp(-x1(i)^2/2)
 x(i)=x1(i);
+i=i+1;
 else
-i=i-1;
 continue
 end
 end
